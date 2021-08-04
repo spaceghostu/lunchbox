@@ -21,7 +21,7 @@
               "apps/lunchbox/src/favicon.ico",
               "apps/lunchbox/src/assets"
             ],
-            "styles": ["apps/lunchbox/src/styles.scss"],
+            "styles": ["./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css", "apps/lunchbox/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -122,6 +122,7 @@
     }
   },
   "cli": {
+    "analytics": "c62f61f9-ed90-4135-9010-9b3dd20f6479",
     "defaultCollection": "@nrwl/angular"
   },
   "schematics": {
