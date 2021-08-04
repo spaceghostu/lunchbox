@@ -7,6 +7,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RoutingModule } from './routing.module';
 import { HomeModule } from './home/home.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers } from './+state/index';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,10 +21,22 @@ import { HomeModule } from './home/home.module';
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
     RoutingModule,
     HomeModule,
+    StoreModule.forRoot(
+      reducers,
+      {
+        metaReducers: !environment.production ? [] : [],
+        runtimeChecks: {
+          strictActionImmutability: true,
+          strictStateImmutability: true,
+        },
+      }
+    ),
+    EffectsModule.forRoot([]),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
   bootstrap: [AppComponent],

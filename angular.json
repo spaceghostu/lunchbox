@@ -22,7 +22,10 @@
               "apps/lunchbox/src/assets",
               "apps/lunchbox/src/manifest.webmanifest"
             ],
-            "styles": ["./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css", "apps/lunchbox/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "apps/lunchbox/src/styles.scss"
+            ],
             "scripts": [],
             "serviceWorker": true,
             "ngswConfigPath": "apps/lunchbox/ngsw-config.json"
