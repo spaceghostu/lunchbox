@@ -19,10 +19,13 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "apps/lunchbox/src/favicon.ico",
-              "apps/lunchbox/src/assets"
+              "apps/lunchbox/src/assets",
+              "apps/lunchbox/src/manifest.webmanifest"
             ],
             "styles": ["./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css", "apps/lunchbox/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "apps/lunchbox/ngsw-config.json"
           },
           "configurations": {
             "production": {
