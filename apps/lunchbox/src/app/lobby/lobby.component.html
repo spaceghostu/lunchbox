@@ -1,0 +1,39 @@
+<div class="content">
+    <h2>Players</h2>
+    <h3>Team 1</h3>
+    <mat-form-field *ngFor="let player of team1$ | async" appearance="fill">
+        <mat-label>Player {{ player.id }}</mat-label>
+        <input  matInput
+                type="text"
+                [value]="player.name"
+                (change)="updatePlayerName(player.id, $event, player.team)">
+        <button matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="removePlayer(player.id)">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <button mat-button
+            (click)="addPlayer(0)">Add PLayer</button>
+    <h3 class="space">Team 2</h3>
+    <mat-form-field *ngFor="let player of team2$ | async" appearance="fill">
+        <mat-label>Player {{ player.id }}</mat-label>
+        <input  matInput
+                type="text"
+                [value]="player.name"
+                (change)="updatePlayerName(player.id, $event, player.team)">
+        <button matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="removePlayer(player.id)">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <button mat-button
+            (click)="addPlayer(1)">Add PLayer</button>
+    <button mat-button
+            [routerLink]="['/setup']">Start</button>
+    <button mat-button
+            [routerLink]="['/home']">Home</button>
+</div>

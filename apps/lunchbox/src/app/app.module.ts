@@ -11,6 +11,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './+state/index';
+import { LobbyModule } from './lobby/lobby.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +26,7 @@ import { reducers } from './+state/index';
     }),
     RoutingModule,
     HomeModule,
+    LobbyModule,
     StoreModule.forRoot(
       reducers,
       {
